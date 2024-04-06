@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>pH_value</title>
+    <style>
+        body{
+            background-color:lightgreen;
+        }
+        h1,h3{
+            text-align: center;
+        }
+        #result{
+            font-size: 35px;
+        }
+        #res{
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soil Health Control System using IoT</h1>
+    <h3>Solution for ph value</h3>
+    <form id="myForm">
+        <label for="numberInput">Enter pH level:</label>
+        <input type="number" id="numberInput" name="numberInput">
+        <button type="button" onclick="checkNumber()">Check Number</button>
+    </form>
+    <br><br>
+    <form id="myform1">
+        <label for="numberInput1">Enter moisture level:</label>
+        <input type="number" id="numberInput1" name="numberInput1">
+        <button type="button" onclick="checkNumber1()">Check</button>
+    </form>
+
+    <p id="result"></p>
+    <p id="res"></p>
+    <script>
+        function checkNumber() {
+            // Get the value entered by the user
+            let number = document.getElementById("numberInput").value;
+
+            // Check if the number is greater than 7.5
+            if (number > 7.5) {
+                document.getElementById("result").innerHTML = "Alkaline level, Add sulphur to reduce the pH level";
+            } 
+            else if(number <6.5){
+                document.getElementById("result").innerHTML = "Acidic level, Add lime to balance the pH level";
+            }
+            else{
+                document.getElementById("result").innerHTML = "Neutral level, Soil is good for harvesting";
+            }
+        }
+        function checkNumber1(){
+            let num=document.getElementById("numberInput1").value;
+            if (num > 8.0 && num <9.0) {
+                document.getElementById("res").innerHTML = "Balenced moisure level";
+            } 
+            else if(num <8.0){
+                document.getElementById("res").innerHTML = "moisture level is dry";
+            }
+            else{
+                document.getElementById("res").innerHTML = "moisture level is excess";
+            }
+        }   
+        
+    </script>
+    
+
+</body>
+</html>
